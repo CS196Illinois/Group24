@@ -57,7 +57,7 @@ class CisappParser:
         self.Section = x
 
     def getSeasons(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + ".xml"
@@ -83,7 +83,7 @@ class CisappParser:
         return sections
 
     def getDepartments(self):
-        req = Request('https://courses.illinois.edu/cisapp/explorer/schedule/' + self.Year + '/' + self.Season + '.xml')
+        req = Request, urlopen('https://courses.illinois.edu/cisapp/explorer/schedule/' + self.Year + '/' + self.Season + '.xml')
         req.add_header('Authorization', 'Basic bGVhcm5pbmc6bGVhcm5pbmc==')
 
         ctx = ssl.create_default_context()
@@ -106,7 +106,7 @@ class CisappParser:
         return sections
 
     def getCourses(self):
-        req = Request('https://courses.illinois.edu/cisapp/explorer/schedule/' + self.Year + '/' + self.Season + '/' + self.Department + '.xml')
+        req = Request, urlopen('https://courses.illinois.edu/cisapp/explorer/schedule/' + self.Year + '/' + self.Season + '/' + self.Department + '.xml')
         req.add_header('Authorization', 'Basic bGVhcm5pbmc6bGVhcm5pbmc==')
        
         ctx = ssl.create_default_context()
@@ -132,7 +132,7 @@ class CisappParser:
     # added method to give numbers for every course in any department
 
     def getCourseNumber(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -162,7 +162,7 @@ class CisappParser:
         return sections
 
     def getRelevantProfessors(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -199,7 +199,7 @@ class CisappParser:
         return sections
 
     def getSectionNumber(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -234,7 +234,7 @@ class CisappParser:
 
     # added method to retrieve course start time.
     def getStarttime(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -272,7 +272,7 @@ class CisappParser:
 
     # added method to get credithours associated with the course.
     def getCreditHours(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -303,7 +303,7 @@ class CisappParser:
 
     # added method to get days of the week
     def daysOfWeek(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -354,7 +354,7 @@ class CisappParser:
 
     # added method to get lesson type like if it is online or inperson e.t.c
     def lessonType(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -391,7 +391,7 @@ class CisappParser:
 
     # added method to give discription of the course and the prereqs.
     def eventType(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -424,7 +424,7 @@ class CisappParser:
 
     # added method to add end time of course.
     def endTime(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -464,7 +464,7 @@ class CisappParser:
         return sections
 
     def getCRN(self):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
@@ -538,7 +538,7 @@ class CisappParser:
         return data
 
     def getProfessors(self, CRN):
-        req = Request(
+        req = Request, urlopen(
             "https://courses.illinois.edu/cisapp/explorer/schedule/"
             + self.getYear()
             + "/"
